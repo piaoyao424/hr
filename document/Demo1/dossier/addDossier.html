@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="../js/style.css" type="text/css"></link>
+<script language="javascript" src="../js/oa_Popup.js"></script>
+<script language="javascript" src="../js/script.js"></script>
+
+</head>
+
+<body>
+<form id="addDossierForm" name="addDossierForm" method="post" action="../common/add.html" onsubmit="return checkAddDossier()">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td height="30" colspan="4"  class="td_LTBG_TOP"><img src="../image/list_icon.gif" width="13" height="13" />档案管理&gt;&gt;增加员工档案信息</td>
+    </tr> 
+    <tr>
+      <td width="6%" height="30" class="td_LTR">姓&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+      <td width="30%" class="td_LTR"><label>
+        <input name="name" type="text"  onblur="checkNull(this,'divName','姓名')" />
+      <div id="divName" style="display:inline"><font color="#003300">* 姓名不能大于10位</font></div></label></td>
+      <td width="7%" class="td_LTR">性&nbsp;&nbsp;&nbsp;&nbsp;别</td>
+      <td width="57%" class="td_LTE"><label>
+        <input name="sex" type="radio" value="radiobutton" checked="checked" />
+      男 
+      <input name="sex" type="radio" value="radiobutton" />
+      女</label></td>
+    </tr>
+    <tr>
+      <td  class="td_LTR">年&nbsp;&nbsp;&nbsp;&nbsp;龄</td>
+      <td  class="td_LTR"><label>
+        <input name="age" type="text" id="age" onblur="checkNull(this,'divAge','年龄')" />
+        <div id="divAge" style="display:inline"><font color="#003300">* 年龄必须大于18岁</font></div>
+        </td>
+      <td  class="td_LTR">民&nbsp;&nbsp;&nbsp;&nbsp;族</td>
+      <td height="30"  class="td_LTE"><label>
+        <select name="nation" id="nation">
+          <option value="汉族" selected="selected">汉族</option>
+          <option value="回族">回族</option>
+          <option value="蒙古族">蒙古族</option>
+          <option value="彝族">彝族 </option>
+          <option value="藏族">藏族</option>
+          <option value="维吾尔族">维吾尔族</option>
+        </select>
+      </label>
+      <div id="Layer1" style="position:absolute;width:231px;height:21px;z-index:2;left: 877px;top: 192px;">
+        <label>
+        <input name="photoPath" type="file" id="photoPath" />
+        </label>
+      </div></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">出生日期</td>
+      <td  class="td_LTR">
+      <input name="birthday" type="text"  value=""  onblur="checkNull(this,'divBirthday','出生日期')"/>
+	  <img src="../image/datetime.gif" style="CURSOR: hand" onclick="fPopUpCalendarDlg(birthday);return false" alt="请选择日期" align="absmiddle"  width="16" height="15"/>
+	  <div id="divBirthday"  style="display:inline"></div>
+      
+      <div id="divPhoto"  style="	position:absolute;width:126px;height:115px;z-index:1;left: 878px;top: 28px; border:#CCCCCC 1px solid"><img src="../image/jj.JPG" width="129" height="158"  /></div></td>
+      <td  class="td_LTR">出 生 地</td>
+      <td  class="td_LTE"><label>
+        <input name="birthPlace" type="text" id="birthPlace"  onblur="checkNull(this,'divBirthPlace','出生地')" />
+		 <div id="divBirthPlace" style="display:inline"><font color="#003300">* 出生地不能为空</font></div>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">专&nbsp;&nbsp;&nbsp;&nbsp;业</td>
+      <td  class="td_LTR">
+        <input name="speciality" type="text" id="speciality"   onblur="checkNull(this,'divSpeciality','专业')"/>
+        <div id="divSpeciality" style="display:inline"><font color="#003300">* 专业不能为空</font></div></td>
+      <td  class="td_LTR">学&nbsp;&nbsp;&nbsp;&nbsp;历</td>
+      <td  class="td_LTE"><label>
+        <select name="select">
+          <option value="中专">中专</option>
+          <option value="高中">高中</option>
+          <option value="大专" selected="selected">大专</option>
+          <option value="本科">本科</option>
+          <option value="研究生">研究生</option>
+          <option value="硕士">硕士</option>
+          <option value="博士">博士</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30" class="td_LTR">手机号码</td>
+      <td class="td_LTR"><label>
+        <input name="mobile" type="text" id="mobile"  onblur="checkNull(this,'divMobile','手机号码')"/>
+		<div id="divMobile" style="display:inline"><font color="#003300">* 手机号码不能为空</font></div>
+      </label></td>
+      <td class="td_LTR">住&nbsp;&nbsp;&nbsp;&nbsp;址</td>
+      <td class="td_LTE"><label>
+        <input name="address" type="text" id="address"   onblur="checkNull(this,'divAddress','住址')"/>
+		 <div id="divAddress" style="display:inline"><font color="#003300">* 住址不能为空</font></div>
+</label></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">家庭住址</td>
+      <td  class="td_LTR"><label>
+        <input name="familyAddress" type="text" id="familyAddress"  onblur="checkNull(this,'divFamilyAddress','家庭住址')"/>
+		<div id="divFamilyAddress" style="display:inline"><font color="#003300">* 家庭地址不能为空</font></div>
+        </label></td>
+      <td  class="td_LTR">家庭电话</td>
+      <td  class="td_LTE"><label>
+        <input name="familyPhone" type="text" id="familyPhone"   onblur="checkNull(this,'divFamilyPhone','家庭电话')"/>
+        <div id="divFamilyPhone" style="display:inline"><font color="#003300">* 家庭电话不能为空</font></div>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">Emial</td>
+      <td  class="td_LTR"><label>
+        <input name="email" type="text" id="email"  onblur="checkNull(this,'divEmail','邮箱')" />
+        <div id="divEmail" style="display:inline"><font color="#003300">* 邮箱必须为有效的</font></div>
+      </label></td>
+      <td  class="td_LTR">政治面貌</td>
+      <td  class="td_LTE"><label></label>
+        <select name="select2">
+          <option value="无">无</option>
+          <option value="团员">团员</option>
+          <option value="党员">党员</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">QQ号码</td>
+      <td  class="td_LTR">
+	    <input name="QQ" type="text" id="QQ"  onblur="checkNull(this,'divQQ','QQ号码')" />
+        <div id="divQQ" style="display:inline"><font color="#003300">* QQ号码不能为空</font></div></td>
+      <td  class="td_LTR">职&nbsp;&nbsp;&nbsp;&nbsp;位</td>
+      <td  class="td_LTE"><label>
+        <select name="select3">
+          <option value="销售部">销售部</option>
+          <option value="策划部">策划部</option>
+          <option value="人事部">人事部</option>
+          <option value="财务部">财务部</option>
+          <option value="研发部">研发部</option>
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="select4">
+          <option value="普通员工">普通员工</option>
+          <option value="部门经理">部门经理</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">邮政编码</td>
+      <td  class="td_LTR"><label>
+        <input name="postCode" type="text" id="postCode"  onblur="checkNull(this,'divPostCode','邮政编码')" />
+		<div id="divPostCode" style="display:inline"><font color="#003300" >* 邮政编码不能为空</font></div>
+        </label></td>
+      <td  class="td_LTR">爱&nbsp;&nbsp;&nbsp;&nbsp;好</td>
+      <td  class="td_LTE"><label>
+        <input name="hobby" type="text" id="hobby"  onblur="checkNull(this,'divHobby','爱好')"/>
+        <div id="divHobby" style="display:inline"><font color="#003300">* 爱好不能为空</font></div>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">特&nbsp;&nbsp;&nbsp;&nbsp;长</td>
+      <td colspan="3"  class="td_LTE"><label>
+        <input name="skills" type="text" id="skills"  size="50"  onblur="checkNull(this,'divSkills','特长')"/>
+		<div id="divSkills" style="display:inline"><font color="#003300">* 特长不能为空</font></div>
+      </label></td>
+    </tr>
+    
+    <tr>
+      <td height="30"   class="td_LTR">备&nbsp;&nbsp;&nbsp;&nbsp;注</td>
+      <td colspan="3" class="td_LTE"><label>
+      <textarea name="remark" cols="80" rows="5" id="remark"  onblur="checkNull(this,'divRemark','备注')"></textarea>
+	  <div id="divRemark" style="display:inline"><font color="#003300">* 备注不能为空</font></div>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30" colspan="4" align="center" class="td_LTRB"><label>
+        <input type="submit" name="Submit" value="确认信息无误，提交" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" href="../js/style.css" type="text/css"></link>
+<title>查看员工信息</title>
+<script type="text/javascript">
+ function deleteTo(){
+		  if(window.confirm("你确认要删除吗？")){
+		    window.location.href="../common/success.html";
+		  }
+		}
+</script>
+<script language="javascript" src="../js/oa_Popup.js"></script>
+ </head>
+
+<body>
+<form name="SearchDossierForm" method="post" action="">
+
+ <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td height="30" colspan="6" class="td_LTBG_TOP"><img src="../image/list_icon.gif" />档案管理&gt;&gt;查看员工信息</td>
+    </tr>
+    <tr>
+      <td colspan="6" height="30" >
+	    
+		 <table width="100%"  border="0"  cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%" height="30"  align="center" class="td_LR">按职位查找：
+      <label>
+      <select name="select">
+        <option value="-----">请选择</option>
+        <option value="0">经理</option>
+        <option value="1">部门经理</option>
+        <option value="2">普通员工</option>
+      </select>
+      </label>
+      &nbsp;&nbsp;&nbsp;按入职时间查找：
+        <label>
+        <input name="enterTime" type="text"  value="" size="15"/>
+        </label>
+        &nbsp;<img src="../image/datetime.gif" width="16" height="16" style="CURSOR: hand" onclick="fPopUpCalendarDlg(enterTime);return false" alt="请选择日期" align="absmiddle"  /> &nbsp;&nbsp;&nbsp;&nbsp;按姓名查询
+        <label>
+        <input name="name" type="text" id="name" size="15" />&nbsp;&nbsp;&nbsp;&nbsp;        </label>
+        <input  type="submit" value="查询" class="bt_four"/>&nbsp;&nbsp;&nbsp;&nbsp;        <input  type="reset" value="重置" class="bt_four"/></td>
+  </tr>
+  
+  <tr>
+    <td height="30" class="td_LTE"><a href="addDossier.html" >点击添加人事档案</a></td>
+  </table>	  </td>
+    </tr>
+    
+    <tr>
+      <td width="9%"  height="30" class="td_LTR">档案编号</td>
+      <td width="15%" class="td_LTR">员工姓名</td>
+      <td width="11%"   class="td_LTR">归档时间</td>
+	  <td width="22%"   class="td_LTR">入职时间</td>
+      <td width="22%"   class="td_LTR">状态</td>
+      <td class="td_LTR" >操&nbsp;&nbsp;作</td>
+    </tr>
+    <tr>
+      <td height="30" class="td_LTR">1</td>
+      <td height="30" class="td_LTR">王静</td>
+      <td class="td_LTR">2008-10-1</td>
+	  <td   class="td_LTR">2008-8-24</td>
+      <td   class="td_LTR">正在审核中....</td>
+      <td class="td_LTR"><a href="updateDossier.html"><img src="../image/calendar_week_edit.png" width="16" height="14" border="0" /></a>&nbsp;&nbsp;<a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0" /></a></td>
+    </tr>
+    <tr>
+      <td height="30" class="td_LTR">2</td>
+      <td height="30" class="td_LTR">aa</td>
+      <td class="td_LTR">2008-10-1</td>
+	  <td   class="td_LTR">2008-8-24</td>
+      <td   class="td_LTR">正常</td>
+      <td class="td_LTR"><a href="updateDossier.html"><img src="../image/calendar_week_edit.png" width="16" height="14" border="0" /></a>&nbsp;&nbsp;<a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0" /></a></td>
+    </tr>
+    <tr>
+     <td height="30" class="td_LTR">3</td>
+      <td height="30" class="td_LTR">bb</td>
+      <td class="td_LTR">2008-10-1</td>
+	  <td   class="td_LTR">2008-8-24</td>
+      <td   class="td_LTR">正常</td>
+      <td class="td_LTE"><span class="td_LTR"><a href="updateDossier.html"><img src="../image/calendar_week_edit.png" width="16" height="14" border="0" /></a>&nbsp;&nbsp;<a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0" /></a></span></td>
+    </tr>
+    <tr>
+     <td height="30" class="td_LTR">4</td>
+      <td height="30" class="td_LTR">cc</td>
+      <td class="td_LTR">2008-10-1</td>
+	  <td   class="td_LTR">2008-8-24</td>
+      <td   class="td_LTR">正常</td>
+      <td class="td_LTE"><span class="td_LTR"><a href="updateDossier.html"><img src="../image/calendar_week_edit.png" width="16" height="14" border="0" /></a>&nbsp;&nbsp;<a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0" /></a></span></td>
+    </tr>
+    <tr>
+     <td height="30" class="td_LTR">5</td>
+      <td height="30" class="td_LTR">dd</td>
+      <td class="td_LTR">2008-10-1</td>
+	  <td   class="td_LTR">2008-8-24</td>
+      <td   class="td_LTR">正在审核中....</td>
+      <td class="td_LTE"><span class="td_LTR"><a href="updateDossier.html"><img src="../image/calendar_week_edit.png" width="16" height="14" border="0" /></a>&nbsp;&nbsp;<a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0" /></a></span></td>
+    </tr>
+    <tr>
+      <td height="30" class="td_LTR">6</td>
+      <td height="30" class="td_LTR">ee</td>
+      <td class="td_LTR">2008-10-1</td>
+	  <td   class="td_LTR">2008-8-24</td>
+      <td   class="td_LTR">正常</td>
+      <td class="td_LTE"><span class="td_LTR"><a href="updateDossier.html"><img src="../image/calendar_week_edit.png" width="16" height="14" border="0" /></a>&nbsp;&nbsp;<a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0" /></a></span></td>
+    </tr>
+    <tr>
+     <td height="30" class="td_LTR">7</td>
+      <td height="30" class="td_LTR">ff</td>
+      <td class="td_LTR">2008-10-1</td>
+	  <td   class="td_LTR">2008-8-24</td>
+      <td   class="td_LTR">正在审核中....</td>
+      <td class="td_LTE"><span class="td_LTR"><a href="updateDossier.html"><img src="../image/calendar_week_edit.png" width="16" height="14" border="0" /></a>&nbsp;&nbsp;<a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0" /></a></span></td>
+    </tr>
+    <tr>
+      <td height="30" colspan="6" align="right"  class="td_LTRB">共<font color="#FF0000">3</font>页&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">上一页</a>&nbsp;&nbsp;&nbsp;1/3 &nbsp;&nbsp;<a href="#">下一页</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">尾页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <input name="" type="text"    size="3"/><input name="btnPage" type="button" id="btnPage" value="GO"   class="bt_Go"/></td>
+    </tr>
+  </table>
+</form>
+
+ 
+ 
+ 
+</body>
+</html>

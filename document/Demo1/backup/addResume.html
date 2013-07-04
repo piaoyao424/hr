@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script language="javascript" src="../js/oa_Popup.js"></script>
+<link rel="stylesheet" href="../js/style.css" type="text/css"></link></head>
+
+<body>
+<form id="addResumeForm" name="addDossierForm" method="post" action="../commmon/add.html">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td height="30" colspan="4"  class="td_LTBG_TOP"><img src="../image/list_icon.gif" width="13" height="13" />简历管理&gt;&gt;增加简历</td>
+    </tr> 
+    <tr>
+      <td width="6%" height="30" class="td_LTR">姓&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+      <td width="30%" class="td_LTR"><label>
+        <input name="name" type="text" id="name" />
+      </label></td>
+      <td width="7%" class="td_LTR">性&nbsp;&nbsp;&nbsp;&nbsp;别</td>
+      <td width="57%" class="td_LTE"><label>
+        <input name="sex" type="radio" value="radiobutton" checked="checked" />
+      男 
+      <input type="radio" name="sex" value="radiobutton" />
+      女</label></td>
+    </tr>
+    <tr>
+      <td  class="td_LTR">年&nbsp;&nbsp;&nbsp;&nbsp;龄</td>
+      <td  class="td_LTR"><label>
+        <input name="age" type="text" id="age" />
+      </label></td>
+      <td  class="td_LTR">民&nbsp;&nbsp;&nbsp;&nbsp;族</td>
+      <td height="30"  class="td_LTE"><label>
+        <select name="nation" id="nation">
+          <option value="汉族" selected="selected">汉族</option>
+          <option value="回族">回族</option>
+          <option value="蒙古族">蒙古族</option>
+          <option value="彝族">彝族 </option>
+          <option value="藏族">藏族</option>
+          <option value="维吾尔族">维吾尔族</option>
+        </select>
+      </label>
+      <div id="Layer1" style="position:absolute;width:241px;height:21px;z-index:2;left: 760px;top: 196px;">
+        <label>
+        <input name="photoPath" type="file" id="photoPath" />
+        </label>
+      </div></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">出生日期</td>
+      <td  class="td_LTR"><label>
+      <input name="birthday" type="text" id="birthday" />
+	   <img src="../image/datetime.gif" style="CURSOR: hand" onclick="fPopUpCalendarDlg(birthday);return false" alt="请选择日期" align="absmiddle"  width="16" height="15"/>
+      </label>
+      <div id="divPhoto"  style="	position:absolute;width:126px;height:115px;z-index:1;left: 768px;top: 29px; border:#CCCCCC 1px solid"><img src="../image/jj.JPG" width="129" height="158" /></div></td>
+      <td  class="td_LTR">出 生 地</td>
+      <td  class="td_LTE"><label>
+        <input name="birthPlace" type="text" id="birthPlace" />
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">专&nbsp;&nbsp;&nbsp;&nbsp;业</td>
+      <td  class="td_LTR"><label>
+        <input name="speciality" type="text" id="speciality" />
+</label></td>
+      <td  class="td_LTR">学&nbsp;&nbsp;&nbsp;&nbsp;历</td>
+      <td  class="td_LTE"><label>
+        <select name="select">
+          <option value="中专">中专</option>
+          <option value="高中">高中</option>
+          <option value="大专" selected="selected">大专</option>
+          <option value="本科">本科</option>
+          <option value="研究生">研究生</option>
+          <option value="硕士">硕士</option>
+          <option value="博士">博士</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30" class="td_LTR">手机号码</td>
+      <td class="td_LTR"><label>
+        <input name="mobile" type="text" id="mobile" />
+</label></td>
+      <td class="td_LTR">住&nbsp;&nbsp;&nbsp;&nbsp;址</td>
+      <td class="td_LTE"><label>
+        <input name="address" type="text" id="address" />
+</label></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">Emial</td>
+      <td  class="td_LTR"><label>
+        <input name="email" type="text" id="email" />
+</label></td>
+      <td  class="td_LTR">家庭电话</td>
+      <td  class="td_LTE"><label>
+        <input name="familyPhone" type="text" id="familyPhone" />
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">邮政编码</td>
+      <td  class="td_LTR"><label>
+        <input name="postCode" type="text" id="postCode" />
+      </label></td>
+      <td  class="td_LTR">政治面貌</td>
+      <td  class="td_LTE"><label></label>
+        <select name="select2">
+          <option value="无">无</option>
+          <option value="团员">团员</option>
+          <option value="党员">党员</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">&nbsp;</td>
+      <td  class="td_LTR">&nbsp;</td>
+      <td  class="td_LTR">职&nbsp;&nbsp;&nbsp;&nbsp;位</td>
+      <td  class="td_LTE"><label>
+        <select name="select3">
+          <option value="销售部">销售部</option>
+          <option value="策划部">策划部</option>
+          <option value="人事部">人事部</option>
+          <option value="财务部">财务部</option>
+          <option value="研发部">研发部</option>
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;
+        <select name="select4">
+          <option value="普通员工">普通员工</option>
+          <option value="部门经理">部门经理</option>
+        </select>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30"  class="td_LTR">爱&nbsp;&nbsp;&nbsp;&nbsp;好</td>
+      <td  class="td_LTR"><label> 
+        <input name="hobby" type="text" id="hobby" />
+      </label></td>
+      <td  class="td_LTR">特&nbsp;&nbsp;&nbsp;&nbsp;长</td>
+      <td  class="td_LTE"><label>
+        <input name="skills" type="text" id="skills"  size="50"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30" colspan="4"  class="td_LTR"><label><br />
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30"   class="td_LTR">备&nbsp;&nbsp;&nbsp;&nbsp;注</td>
+      <td colspan="3" class="td_LTE"><label>
+        <textarea name="remark" cols="80" rows="5" id="remark"></textarea>
+      </label></td>
+    </tr>
+    <tr>
+      <td height="30" colspan="4" align="center" class="td_LTRB"><label>
+        <input type="submit" name="Submit" value="确认信息无误，提交" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

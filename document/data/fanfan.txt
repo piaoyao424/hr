@@ -1,0 +1,327 @@
+INSERT INTO [hrDB].[dbo].[salaryStandard]
+           ([basicmoney]
+           ,[contact]
+           ,[floatWage]
+           ,[trafficSubsidy]
+           ,[lunchSubsidy]
+           ,[ss_designer]
+           ,[ss_register]
+           ,[ss_registerTime]
+           ,[ss_checker]
+           ,[ss_checkerTime]
+           ,[ss_changer]
+           ,[ss_changeTime]
+           ,[ss_salary]
+           ,[ss_checkStatus]
+           ,[ss_comment]
+           ,[position_Id])
+     VALUES
+           (3214
+           ,324
+           ,321
+           ,321
+           ,321
+           ,'jingjing'
+           ,'suiwa'
+           ,2009-12-2
+           ,'NBA'
+           ,2009-12-12
+           ,'huihui'
+           ,2009-8-23
+           ,3241
+           ,1
+           ,'kobe圣诞大战james'
+           ,1)
+
+
+INSERT INTO [hrDB].[dbo].[salaryStandard]
+           ([basicmoney]
+           ,[contact]
+           ,[floatWage]
+           ,[trafficSubsidy]
+           ,[lunchSubsidy]
+           ,[ss_designer]
+           ,[ss_register]
+           ,[ss_registerTime]
+           ,[ss_checker]
+           ,[ss_checkerTime]
+           ,[ss_changer]
+           ,[ss_changeTime]
+           ,[ss_salary]
+           ,[ss_checkStatus]
+           ,[ss_comment]
+           ,[position_Id])
+     VALUES
+           (3214
+           ,324
+           ,321
+           ,321
+           ,321
+           ,'jingjing'
+           ,'suiwa'
+           ,2009-12-2
+           ,'NBA'
+           ,2009-12-12
+           ,'huihui'
+           ,2009-8-23
+           ,3241
+           ,1
+           ,'kobe圣诞大战james'
+           ,2)
+
+
+INSERT INTO [hrDB].[dbo].[salaryStandard]
+           ([basicmoney]
+           ,[contact]
+           ,[floatWage]
+           ,[trafficSubsidy]
+           ,[lunchSubsidy]
+           ,[ss_designer]
+           ,[ss_register]
+           ,[ss_registerTime]
+           ,[ss_checker]
+           ,[ss_checkerTime]
+           ,[ss_changer]
+           ,[ss_changeTime]
+           ,[ss_salary]
+           ,[ss_checkStatus]
+           ,[ss_comment]
+           ,[position_Id])
+     VALUES
+           (3214
+           ,324
+           ,321
+           ,321
+           ,321
+           ,'jingjing'
+           ,'suiwa'
+           ,2009-12-2
+           ,'NBA'
+           ,2009-12-12
+           ,'huihui'
+           ,2009-8-23
+           ,3241
+           ,2
+           ,'kobe圣诞大战james'
+           ,1)
+
+
+INSERT INTO [hrDB].[dbo].[salaryStandard]
+           ([basicmoney]
+           ,[contact]
+           ,[floatWage]
+           ,[trafficSubsidy]
+           ,[lunchSubsidy]
+           ,[ss_designer]
+           ,[ss_register]
+           ,[ss_registerTime]
+           ,[ss_checker]
+           ,[ss_checkerTime]
+           ,[ss_changer]
+           ,[ss_changeTime]
+           ,[ss_salary]
+           ,[ss_checkStatus]
+           ,[ss_comment]
+           ,[position_Id])
+     VALUES
+           (3214
+           ,324
+           ,321
+           ,321
+           ,321
+           ,'jingjing'
+           ,'suiwa'
+           ,2009-12-2
+           ,'NBA'
+           ,2009-12-12
+           ,'huihui'
+           ,2009-8-23
+           ,3241
+           ,2
+           ,'kobe圣诞大战james'
+           ,2)
+
+
+INSERT INTO [hrDB].[dbo].[salaryStandard]
+           ([basicmoney]
+           ,[contact]
+           ,[floatWage]
+           ,[trafficSubsidy]
+           ,[lunchSubsidy]
+           ,[ss_designer]
+           ,[ss_register]
+           ,[ss_registerTime]
+           ,[ss_checker]
+           ,[ss_checkerTime]
+           ,[ss_changer]
+           ,[ss_changeTime]
+           ,[ss_salary]
+           ,[ss_checkStatus]
+           ,[ss_comment]
+           ,[position_Id])
+     VALUES
+           (3214
+           ,324
+           ,321
+           ,321
+           ,321
+           ,'jingjing'
+           ,'suiwa'
+           ,2009-12-2
+           ,'NBA'
+           ,2009-12-12
+           ,'huihui'
+           ,2009-8-23
+           ,3241
+           ,1
+           ,'kobe圣诞大战james'
+           ,3)
+
+
+
+
+
+
+
+
+INSERT INTO [hrDB].[dbo].[salaryGrant]
+           ([employee_Id]
+           ,[sg_factMoney]
+           ,[sg_deductMoney]
+           ,[sg_totalMoney]
+           ,[sg_register]
+           ,[sg_registerTime]
+           ,[sg_checker]
+           ,[sg_checkTime]
+           ,[sg_checkStatus]
+           ,[sg_commit]
+           ,[ss_Id])
+     VALUES
+           (1
+           ,3214
+           ,2143
+           ,54632
+           ,'kobe'
+           ,2008-12-13
+           ,'fanfan'
+           ,2007-11-22
+           ,1
+           ,'拜师kobe'
+           ,1)
+
+INSERT INTO [hrDB].[dbo].[salaryGrant]
+           ([employee_Id]
+           ,[sg_factMoney]
+           ,[sg_deductMoney]
+           ,[sg_totalMoney]
+           ,[sg_register]
+           ,[sg_registerTime]
+           ,[sg_checker]
+           ,[sg_checkTime]
+           ,[sg_checkStatus]
+           ,[sg_commit]
+           ,[ss_Id])
+     VALUES
+           (1
+           ,3214
+           ,2143
+           ,54632
+           ,'kobe'
+           ,2008-12-13
+           ,'fanfan'
+           ,2007-11-22
+           ,2
+           ,'拜师kobe'
+           ,1)
+
+INSERT INTO [hrDB].[dbo].[salaryGrant]
+           ([employee_Id]
+           ,[sg_factMoney]
+           ,[sg_deductMoney]
+           ,[sg_totalMoney]
+           ,[sg_register]
+           ,[sg_registerTime]
+           ,[sg_checker]
+           ,[sg_checkTime]
+           ,[sg_checkStatus]
+           ,[sg_commit]
+           ,[ss_Id])
+     VALUES
+           (1
+           ,3214
+           ,2143
+           ,54632
+           ,'kobe'
+           ,2008-12-13
+           ,'fanfan'
+           ,2007-11-22
+           ,1
+           ,'拜师kobe'
+           ,2)
+
+INSERT INTO [hrDB].[dbo].[salaryGrant]
+           ([employee_Id]
+           ,[sg_factMoney]
+           ,[sg_deductMoney]
+           ,[sg_totalMoney]
+           ,[sg_register]
+           ,[sg_registerTime]
+           ,[sg_checker]
+           ,[sg_checkTime]
+           ,[sg_checkStatus]
+           ,[sg_commit]
+           ,[ss_Id])
+     VALUES
+           (1
+           ,3214
+           ,2143
+           ,54632
+           ,'kobe'
+           ,2008-12-13
+           ,'fanfan'
+           ,2007-11-22
+           ,2
+           ,'拜师kobe'
+           ,2)
+
+INSERT INTO [hrDB].[dbo].[salaryGrant]
+           ([employee_Id]
+           ,[sg_factMoney]
+           ,[sg_deductMoney]
+           ,[sg_totalMoney]
+           ,[sg_register]
+           ,[sg_registerTime]
+           ,[sg_checker]
+           ,[sg_checkTime]
+           ,[sg_checkStatus]
+           ,[sg_commit]
+           ,[ss_Id])
+     VALUES
+           (1
+           ,3214
+           ,2143
+           ,54632
+           ,'kobe'
+           ,2008-12-13
+           ,'fanfan'
+           ,2007-11-22
+           ,2
+           ,'拜师kobe'
+           ,3)
+
+
+
+INSERT INTO [hrDB].[dbo].[users]
+           ([user_name]
+           ,[user_password]
+           ,[user_state]
+           ,[role_Id]
+           ,[employee_Id]
+           ,[position_Id])
+     VALUES
+           ('fengfan'
+           ,123
+           ,1
+           ,5
+           ,Null
+           ,Null)

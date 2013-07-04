@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="../js/style.css" type="text/css"></link>
+<script type="text/javascript">
+ function show(){
+  if(document.getElementById("divPosition").style.display=="none"){
+    document.getElementById("divPosition").style.display="block";
+  }else{
+    document.getElementById("divPosition").style.display="none";
+  }
+ }
+ 
+  function hidden(){
+  if(document.getElementById("divPosition").style.display=="block"){
+     document.getElementById("divPosition").style.display="none";
+  }
+ }
+ function openWindow(action){
+  open(action,"职位添加","toolvars=0,scrollbars=0,location=0,statusbars=0,menubars=0,resizable=0,width=300,height=250");
+ }
+</script>
+</head>
+
+<body>
+<div id="divPosition"  style="position:absolute;left:526px;top:58px;width:465px;height:253px;z-index:1; display:; background-color:#66CCFF"  >
+  <table width="100%" height="167" border="0" cellpadding="0" cellspacing="0" >
+    <tr>
+      <td height="31" colspan="2" class="td_LTR"><a href="javascript:openWindow('addRole.html')">点击添加部门职位</a></td>
+      <td height="31" align="right" valign="top"  class="td_TR"><a href="javascript:show()">关闭</a></td>
+    </tr>
+    <tr>
+      <td height="27" class="td_LTR">编号</td>
+      <td width="32%" height="27" class="td_LTR">职位</td>
+      <td width="36%" class="td_LTE">操作</td>
+    </tr>
+    <tr>
+      <td height="30" class="td_LTR">1</td>
+      <td class="td_LTR">&nbsp;</td>
+      <td class="td_LTE"><a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0"  alt="删除"/></a></td>
+    </tr>
+    <tr>
+      <td width="32%" height="30" class="td_LTR">2</td>
+      <td class="td_LTR">&nbsp;</td>
+      <td class="td_LTE"><a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0"  alt="删除"/></a></td>
+    </tr>
+    <tr>
+      <td height="30" colspan="3" align="right" class="td_LTRB">共<font color="#FF0000">3</font>页&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">首页</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">上一页</a>&nbsp;&nbsp;&nbsp;1/3 &nbsp;&nbsp; <a href="#">下一页</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="#">尾页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input name="Input2" type="text"    size="3"/>
+          <input name="btnPage2" type="button" id="btnPage2" value="GO"   class="bt_Go"/>      </td>
+    </tr>
+  </table>
+</div>
+<table width="100%" height="464" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td valign="top"><table width="100%" height="170" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="30" colspan="4" class="td_LTBG_TOP">数据字典管理&gt;&gt;部门职位管理</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="4"   class="td_LR"><a href="javascript:openWindow('addSection .html')">点击添加部门</a></td>
+      </tr>
+      <tr>
+        <td height="30" class="td_LTR">编号</td>
+        <td width="21%" class="td_LTR">部门</td>
+        <td width="22%" class="td_LTR">查看职位</td>
+        <td width="31%" class="td_LTE">操作</td>
+      </tr>
+      <tr>
+        <td height="30" class="td_LTR">1</td>
+        <td class="td_LTR">销售部</td>
+        <td class="td_LTR"><a href="javascript:show()">点击查看</a></td>
+        <td class="td_LTE"><a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0"  alt="删除"/></a></td>
+      </tr>
+      <tr>
+        <td width="26%" height="30" class="td_LTR">2</td>
+        <td class="td_LTR">研发部</td>
+        <td class="td_LTR"><a href="#">点击查看</a></td>
+        <td class="td_LTE"><a href="javascript:deleteTo()"><img src="../image/calendar_week_remove.png" width="16" height="16" border="0"  alt="删除"/></a></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="4" align="right" class="td_LTRB">共<font color="#FF0000">3</font>页&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">首页</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">上一页</a>&nbsp;&nbsp;&nbsp;1/3 &nbsp;&nbsp; <a href="#">下一页</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="#">尾页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input name="Input" type="text"    size="3"/>
+            <input name="btnPage" type="button" id="btnPage" value="GO"   class="bt_Go"/>        </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td valign="top">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

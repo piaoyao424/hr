@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>
+日期选择
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../calendarCN.js"></script></head>
+<body onLoad="fload()" bgcolor='#EEF2FB'>
+
+<script language="JavaScript1.2" >
+function fload()
+{
+
+fPopCalendar(document.all.txt1, document.all.txt1);
+}
+
+function fkeydown()
+{
+	if(event.keyCode==27){
+		event.returnValue = null;
+		window.returnValue = null;
+		window.close();
+	}
+}
+
+document.onkeydown=fkeydown;
+</script>
+
+<input type=text id="txt1" style="display:none">
+</body>
+</html>

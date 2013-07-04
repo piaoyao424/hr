@@ -1,0 +1,495 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd 
+	http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd">
+
+	<!--  -->
+	<bean id="DataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/hrDB?useUnicode=true&amp;characterEncoding=utf-8">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+		<property name="initialSize" value="50"></property>
+		<property name="maxIdle" value="10"></property>
+		<property name="minIdle" value="5"></property>
+		<property name="maxActive" value="500"></property>
+		<property name="removeAbandoned" value="true"></property>
+		<property name="removeAbandonedTimeout" value="1500"></property>
+		<property name="maxWait" value="2000"></property>
+	</bean>
+
+	<bean id="SessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="DataSource"></ref>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+				<prop key="show_sql">true</prop>
+			</props>
+		</property>
+
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:net/xabc/oo/hr/entity</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="HibernateTransactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="TransactionProxyFactory"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		abstract="true">
+		<property name="transactionManager"
+			ref="HibernateTransactionManager">
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="load*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="query*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="Split*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="check*">PROPAGATION_REQUIRED,readOnly</prop>
+				<prop key="ins*">PROPAGATION_REQUIRED</prop>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="del*">PROPAGATION_REQUIRED</prop>
+				<prop key="remove*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="upd*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- Dao -->
+	<bean id="BranchDao"
+		class="net.xabc.oo.hr.dao.impl.BranchDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="DataDetialDao"
+		class="net.xabc.oo.hr.dao.impl.DataDetailDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="DataTypeDao"
+		class="net.xabc.oo.hr.dao.impl.DataTypeDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="EmployeeDao"
+		class="net.xabc.oo.hr.dao.impl.EmployeeDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="EmployeeLogDao"
+		class="net.xabc.oo.hr.dao.impl.EmployeeLogDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="EngageExamDao"
+		class="net.xabc.oo.hr.dao.impl.EngageExamDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="ExamdetailsDao"
+		class="net.xabc.oo.hr.dao.impl.ExamdetailsDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="ExamInterviewDao"
+		class="net.xabc.oo.hr.dao.impl.ExamInterviewDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="ExamRegisterDetailDao"
+		class="net.xabc.oo.hr.dao.impl.ExamRegisterDetailDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="ExamSecondLevelDao"
+		class="net.xabc.oo.hr.dao.impl.ExamSecondLevelDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="ExamSubjectDao"
+		class="net.xabc.oo.hr.dao.impl.ExamSubjectDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="FileLogDao"
+		class="net.xabc.oo.hr.dao.impl.FileLogDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="PositionChangeDao"
+		class="net.xabc.oo.hr.dao.impl.PositionChangeDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="PositionDao"
+		class="net.xabc.oo.hr.dao.impl.PositionDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="PositionIssuanceDao"
+		class="net.xabc.oo.hr.dao.impl.PositionIssuanceDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="ResumeDao"
+		class="net.xabc.oo.hr.dao.impl.ResumeDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="RightsDao"
+		class="net.xabc.oo.hr.dao.impl.RightsDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="RoleDao" class="net.xabc.oo.hr.dao.impl.RoleDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="RoleRightsDao"
+		class="net.xabc.oo.hr.dao.impl.RoleRightsDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="SalaryGrantDao"
+		class="net.xabc.oo.hr.dao.impl.SalaryGrantDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+
+	<bean id="SalaryStandardDao"
+		class="net.xabc.oo.hr.dao.impl.SalaryStandardDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+	<bean id="UserDao" class="net.xabc.oo.hr.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="SessionFactory"></property>
+	</bean>
+
+
+	<!-- Biz  -->
+	<bean id="BranchBiz"
+		class="net.xabc.oo.hr.biz.impl.BranchBizImpl">
+		<property name="branchDao" ref="BranchDao"></property>
+	</bean>
+	<bean id="TargetBranchBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="BranchBiz"></property>
+	</bean>
+
+	<bean id="DataDetailBiz"
+		class="net.xabc.oo.hr.biz.impl.DataDetaiBizImpl">
+		<property name="dataDetaiDao" ref="DataDetialDao"></property>
+	</bean>
+	<bean id="TargetDataDetailBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="DataDetailBiz"></property>
+	</bean>
+
+	<bean id="DataTypeBiz"
+		class="net.xabc.oo.hr.biz.impl.DataTypeBizImpl">
+		<property name="dataTypeDao" ref="DataTypeDao"></property>
+	</bean>
+	<bean id="TargetDataTypeBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="DataTypeBiz"></property>
+	</bean>
+
+	<bean id="EmployeeBiz"
+		class="net.xabc.oo.hr.biz.impl.EmployeeBizImpl">
+		<property name="employeeDao" ref="EmployeeDao"></property>
+	</bean>
+	<bean id="TargetEmployeeBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="EmployeeBiz"></property>
+	</bean>
+
+	<bean id="EmployeeLogBiz"
+		class="net.xabc.oo.hr.biz.impl.EmployeeLogBizImpl">
+		<property name="employeeLogDao" ref="EmployeeLogDao"></property>
+	</bean>
+	<bean id="TargetEmployeeLogBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="EmployeeLogBiz"></property>
+	</bean>
+
+	<bean id="EngageExamBiz"
+		class="net.xabc.oo.hr.biz.impl.EngageExamBizImpl">
+		<property name="engageExamDao" ref="EngageExamDao"></property>
+	</bean>
+	<bean id="TargetEngegeExamBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="EngageExamBiz"></property>
+	</bean>
+
+	<bean id="ExamdetaiLsBiz"
+		class="net.xabc.oo.hr.biz.impl.ExamdetaiLsBizImpl">
+		<property name="examdetaiLsDao" ref="ExamdetailsDao"></property>
+	</bean>
+	<bean id="TargetExamDetailsBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="ExamdetaiLsBiz"></property>
+	</bean>
+
+	<bean id="ExamInterviewBiz"
+		class="net.xabc.oo.hr.biz.impl.ExamInterviewBizImpl">
+		<property name="examInterviewDao" ref="ExamInterviewDao"></property>
+	</bean>
+	<bean id="TargetExamInterviewBiz"
+		parent="TransactionProxyFactory">
+		<property name="target" ref="ExamInterviewBiz"></property>
+	</bean>
+
+	<bean id="ExamRegisterDetaiBiz"
+		class="net.xabc.oo.hr.biz.impl.ExamRegisterDetaiBizImpl">
+		<property name="examRegisterDetaiDao"
+			ref="ExamRegisterDetailDao">
+		</property>
+	</bean>
+	<bean id="TargetExamRegisterDetaiBiz"
+		parent="TransactionProxyFactory">
+		<property name="target" ref="ExamRegisterDetaiBiz"></property>
+	</bean>
+
+	<bean id="ExamSecondLeveBiz"
+		class="net.xabc.oo.hr.biz.impl.ExamSecondLeveBizImpl">
+		<property name="examSecondLeveDao" ref="ExamSecondLevelDao"></property>
+	</bean>
+	<bean id="TargetExamSecondLeveBiz"
+		parent="TransactionProxyFactory">
+		<property name="target" ref="ExamSecondLeveBiz"></property>
+	</bean>
+
+	<bean id="ExamSubjectBiz"
+		class="net.xabc.oo.hr.biz.impl.ExamSubjectBizImpl">
+		<property name="examSubjectDao" ref="ExamSubjectDao"></property>
+	</bean>
+	<bean id="TargetExamSubjectBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="ExamSubjectBiz"></property>
+	</bean>
+
+	<bean id="FileLogBiz"
+		class="net.xabc.oo.hr.biz.impl.FileLogBizImpl">
+		<property name="fileLogDao" ref="FileLogDao"></property>
+	</bean>
+	<bean id="TargetFileLogBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="FileLogBiz"></property>
+	</bean>
+
+	<bean id="PostionBiz"
+		class="net.xabc.oo.hr.biz.impl.PositionBizImpl">
+		<dwr:remote javascript="cposition" />
+		<property name="positionDao" ref="PositionDao"></property>
+	</bean>
+	<bean id="TargetPositionBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="PostionBiz"></property>
+	</bean>
+
+	<bean id="PositionChangeBiz"
+		class="net.xabc.oo.hr.biz.impl.PositionChangeBizImpl">
+		<property name="positionChangeDao" ref="PositionChangeDao"></property>
+	</bean>
+	<bean id="TargetPostionChangeBiz"
+		parent="TransactionProxyFactory">
+		<property name="target" ref="PositionChangeBiz"></property>
+	</bean>
+
+	<bean id="PositionIssuanceBiz"
+		class="net.xabc.oo.hr.biz.impl.PositionIssuanceBizImpl">
+		<property name="positionIssuanceDao"
+			ref="PositionIssuanceDao">
+		</property>
+	</bean>
+	<bean id="TargetPositionIssuanceBiz"
+		parent="TransactionProxyFactory">
+		<property name="target" ref="PositionIssuanceBiz"></property>
+	</bean>
+
+	<bean id="ResumeBiz" class="net.xabc.oo.hr.biz.impl.ReumeBizImpl">
+		<property name="reumeDao" ref="ResumeDao"></property>
+	</bean>
+	<bean id="TargetResumeBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="ResumeBiz"></property>
+	</bean>
+
+	<bean id="RightsBiz"
+		class="net.xabc.oo.hr.biz.impl.RightsBizImpl">
+		<property name="rightsDao" ref="RightsDao"></property>
+	</bean>
+	<bean id="TargetRightBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="RightsBiz"></property>
+	</bean>
+
+	<bean id="RoleBiz" class="net.xabc.oo.hr.biz.impl.RoleBizImpl">
+		<dwr:remote javascript="crole"></dwr:remote>
+		<property name="roleDao" ref="RoleDao"></property>
+	</bean>
+	<bean id="TargetRoleBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="RoleBiz"></property>
+	</bean>
+
+	<bean id="RoleRightsBiz"
+		class="net.xabc.oo.hr.biz.impl.RoleRightsBizImpl">
+		<property name="roleRightsDao" ref="RoleRightsDao"></property>
+	</bean>
+	<bean id="TargetRoleRightsBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="RoleRightsBiz"></property>
+	</bean>
+
+	<bean id="SalaryGrantBiz"
+		class="net.xabc.oo.hr.biz.impl.SalaryGrantBizImpl">
+		<property name="salaryGrantDao" ref="SalaryGrantDao"></property>
+	</bean>
+	<bean id="TargetSalaryGrantBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="SalaryGrantBiz"></property>
+	</bean>
+
+
+
+	<bean id="SalaryStandardBiz"
+		class="net.xabc.oo.hr.biz.impl.SalaryStandardBizImpl">
+		<dwr:remote javascript="dwrCheckPositionIdExists"></dwr:remote>
+		<property name="salaryStandardDao" ref="SalaryStandardDao"></property>
+	</bean>
+	<bean id="TargetSalaryStandardBiz"
+		parent="TransactionProxyFactory">
+		<property name="target" ref="SalaryStandardBiz"></property>
+	</bean>
+
+	<bean id="UserBiz" class="net.xabc.oo.hr.biz.impl.UserBizImpl">
+	    <dwr:remote javascript="dwrcheckUser"></dwr:remote>
+		<property name="userDao" ref="UserDao"></property>
+	</bean>
+	<bean id="TargetUserBiz" parent="TransactionProxyFactory">
+		<property name="target" ref="UserBiz"></property>
+	</bean>
+
+	<!--	公共类-->
+	<bean id="SelectOptions"
+		class="net.xabc.oo.hr.common.SelectOptions">
+		<property name="branchBiz" ref="BranchBiz"></property>
+		<property name="dataTypeBiz" ref="DataTypeBiz"></property>
+		<property name="dataDetailBiz" ref="DataDetailBiz"></property>
+		<property name="roleBiz" ref="RoleBiz"></property>
+		<property name="secondLeveBiz" ref="ExamSecondLeveBiz"></property>
+	</bean>
+
+	<!--Action -->
+	<bean name="/user" class="net.xabc.oo.hr.web.action.UserAction">
+		<property name="userBiz" ref="UserBiz"></property>
+		<property name="roleBiz" ref="RoleBiz"></property>
+		<property name="selectOptions" ref="SelectOptions"></property>
+	</bean>
+	<bean name="/Dossier"
+		class="net.xabc.oo.hr.web.action.DossierAction">
+		<property name="employeeBiz" ref="EmployeeBiz"></property>
+		<property name="employeeLogBiz" ref="EmployeeLogBiz"></property>
+		<property name="dateDetailBiz" ref="DataDetailBiz"></property>
+		<property name="selectOptions" ref="SelectOptions"></property>
+		<property name="salaryStandardBiz" ref="SalaryStandardBiz"></property>
+	</bean>
+	<bean name="/positionChange"
+		class="net.xabc.oo.hr.web.action.PositionChangeAction">
+		<property name="positionChangeBiz" ref="PositionChangeBiz"></property>
+		<property name="selectOptions" ref="SelectOptions"></property>
+		<property name="employeeBiz" ref="EmployeeBiz"></property>
+		<property name="branchBiz" ref="BranchBiz"></property>
+		<property name="postionBiz" ref="PostionBiz"></property>
+	</bean>
+
+	<bean name="/option"
+		class="net.xabc.oo.hr.web.action.OptionsAction">
+		<property name="selectOptions" ref="SelectOptions"></property>
+		<property name="dataDetailBiz" ref="DataDetailBiz"></property>
+		<property name="rightsBiz" ref="RightsBiz"></property>
+	</bean>
+	<bean name="/uploadAction"
+		class="net.xabc.oo.hr.web.action.UploadAction">
+	</bean>
+	<bean name="/positionAction"
+		class="net.xabc.oo.hr.web.action.PositionAction">
+		<property name="postionBiz" ref="PostionBiz"></property>
+	</bean>
+	<bean name="/position"
+		class="net.xabc.oo.hr.web.action.PositionIssuanceAction">
+		<property name="selectOptions" ref="SelectOptions"></property>
+		<property name="positionIssuanceBiz"
+			ref="PositionIssuanceBiz">
+		</property>
+	</bean>
+	<bean name="/menue"
+		class="net.xabc.oo.hr.web.action.RoleMenueAction">
+		<property name="rightsBiz" ref="RightsBiz"></property>
+	</bean>
+	<bean name="/salaryStandAction"
+		class="net.xabc.oo.hr.web.action.SalaryStandardAction">
+		<property name="sstandBiz" ref="SalaryStandardBiz"></property>
+		<property name="selectOptions" ref="SelectOptions"></property>
+		<property name="salaryGrantBiz" ref="SalaryGrantBiz"></property>
+		<property name="dataDetaiBiz" ref="DataDetailBiz"></property>
+		<property name="positionBiz" ref="PostionBiz"></property>
+		<property name="employeeBiz" ref="EmployeeBiz"></property>
+	</bean>
+	<bean name="/salaryGrantAction" class="net.xabc.oo.hr.web.action.SalaryGrantAction">
+		<property name="salaryGrantBiz" ref="SalaryGrantBiz"></property>
+	</bean>
+	<bean name="/branch"
+		class="net.xabc.oo.hr.web.action.BranchAction">
+		<property name="branchBiz" ref="BranchBiz"></property>
+		<property name="postionBiz" ref="PostionBiz"></property>
+	</bean>
+	<bean name="/examLeoveAction"
+		class="net.xabc.oo.hr.web.action.ExamLeoveAction">
+		<property name="dataDetaiBiz" ref="DataDetailBiz"></property>
+	</bean>
+	<bean name="/examSecondLevelAction"
+		class="net.xabc.oo.hr.web.action.ExamSecondLevelAction">
+		<property name="examSecondLeveBiz" ref="ExamSecondLeveBiz"></property>
+	</bean>
+	<bean name="/exam" class="net.xabc.oo.hr.web.action.ExamAction">
+		<property name="examSubjectBiz" ref="ExamSubjectBiz"></property>
+		<property name="selectOptions" ref="SelectOptions"></property>
+	</bean>
+    <bean name="/employ" class="net.xabc.oo.hr.web.action.EmployAction">
+    	<property name="examInterviewBiz" ref="ExamInterviewBiz"></property>
+    	<property name="dataDetaiBiz" ref="DataDetailBiz"></property>
+    	<property name="positionBiz" ref="PostionBiz"></property>
+    	<property name="reumeBiz" ref="ResumeBiz"></property>
+    </bean>
+    <bean name="/role" class="net.xabc.oo.hr.web.action.RoleAction">
+    	<property name="roleBiz" ref="RoleBiz"></property>
+    	<property name="roleRightsBiz"  ref="RoleRightsBiz"></property>
+    	<property name="rightsBiz" ref="RightsBiz"/>
+    </bean>
+
+	<dwr:configuration>
+		<dwr:convert class="net.xabc.oo.hr.biz.impl.PositionBizImpl "
+			type="bean">
+		</dwr:convert>
+	</dwr:configuration>
+	<dwr:configuration>
+		<dwr:convert class="net.xabc.oo.hr.biz.impl.RoleBizImpl"
+			type="bean">
+		</dwr:convert>
+	</dwr:configuration>
+	<dwr:configuration>
+		<dwr:convert class="net.xabc.oo.hr.biz.impl.SalaryStandardBizImpl"
+			type="bean">
+		</dwr:convert>
+	</dwr:configuration>
+	<dwr:configuration>
+	 <dwr:convert class="net.xabc.oo.hr.biz.impl.UserBizImpl"
+			type="bean">
+		</dwr:convert>
+	</dwr:configuration>
+	</beans>

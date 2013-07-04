@@ -1,0 +1,22 @@
+#
+#Sat Mar 20 11:41:43 CST 2010
+genBasicCompId=false
+sessionFactoryName=net.xabc.oo.hr.entity.HibernateSessionFactory
+profile=
+daoSFId=SessionFactory
+version=3.1
+jndiPath=
+detectM2M=false
+reStrategyClass=
+springDaoFile=res/net/xabc/oo/config/beans.xml
+useJavaTypes=true
+keyGenerator=native
+libInstallFolder=/WebRoot/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+reSettingsFile=/hr/hibernate.reveng.xml
+configFile=/hr/res/net/xabc/oo/config/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=true

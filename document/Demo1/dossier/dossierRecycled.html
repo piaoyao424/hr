@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="../js/style.css" type="text/css"></link>
+<script type="text/javascript">
+ function deleteDossier(){
+		  if(window.confirm("此操作不可恢复，你确认要删除吗？")){
+		    window.location.href="../common/success.html";
+		  }
+		}
+</script>
+</head>
+
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td colspan="6"  class="td_LTBG_TOP"  height="30"><img src="../image/list_icon.gif" width="13" height="13" />档案管理&gt;&gt;回收站</td>
+  </tr>
+  <tr>
+    <td width="119" class="td_LTR" height="30">内容编号</td>
+    <td width="99" class="td_LTR">姓名</td>
+    <td width="146" class="td_LTR">所属部门</td>
+    <td width="212" class="td_LTR">被删除时间</td>
+    <td width="164" class="td_LTR">还原</td>
+    <td width="453" class="td_LTE">操作</td>
+  </tr>
+  <tr>
+    <td class="td_LTR" height="30">1</td>
+    <td class="td_LTR" >崔波</td>
+    <td class="td_LTR" >销售部</td>
+    <td class="td_LTR" >2009-11-21</td>
+    <td class="td_LTR" ><a href="#">还原</a><a href="#"></a> </td>
+    <td class="td_LTE" ><a href="javascript:deleteDossier()"><img src="../image/calendar_week_remove.png" width="16" height="16"  border="0"   alt="修改"/></a></td>
+  </tr>
+  <tr>
+    <td class="td_LTR" height="30">2</td>
+    <td class="td_LTR">邓天华</td>
+    <td class="td_LTR">研发部</td>
+    <td class="td_LTR">2009-11-21</td>
+    <td class="td_LTR"><a href="#">还原</a></td>
+    <td class="td_LTE"><a href="javascript:deleteDossier()"><img src="../image/calendar_week_remove.png" width="16" height="16"  border="0"   alt="修改"/></a></td>
+  </tr>
+
+  <tr>
+    <td class="td_LTR" height="30">3</td>
+    <td class="td_LTR" >崔波</td>
+    <td class="td_LTR" >销售部</td>
+    <td class="td_LTR" >2009-11-21</td>
+    <td class="td_LTR" ><a href="#">还原</a></td>
+    <td class="td_LTE" ><a href="javascript:deleteDossier()"><img src="../image/calendar_week_remove.png" width="16" height="16"  border="0"   alt="修改"/></a></td>
+  </tr>
+  <tr>
+    <td class="td_LTR" height="30">4</td>
+    <td class="td_LTR">邓天华</td>
+    <td class="td_LTR">研发部</td>
+    <td class="td_LTR">2009-11-21</td>
+    <td class="td_LTR"><a href="#">还原</a></td>
+    <td class="td_LTE"><a href="javascript:deleteDossier()"><img src="../image/calendar_week_remove.png" width="16" height="16"  border="0"   alt="修改"/></a></td>
+  </tr>
+  <tr>
+    <td height="30" colspan="6" align="right"  class="td_LTRB">共<font color="#FF0000">3</font>页&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">首页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">上一页</a>&nbsp;&nbsp;&nbsp;1/3 &nbsp;&nbsp;<a href="#">下一页</a> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">尾页</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input name="Input" type="text"    size="3"/>
+        <input name="btnPage" type="button" id="btnPage" value="GO"   class="bt_Go"/>    </td>
+  </tr>
+</table>
+</body>
+</html>

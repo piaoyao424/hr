@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>操作成功</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" type="text/css" href="../js/style.css">
+<base target="mainFrame">
+<script language="javascript">
+
+var tt="error.htm";
+  function jump(){
+    setTimeout("goback()","1000");
+  }
+  function goback(){
+  window.location=top.targeturl;
+  }
+</script>
+</head>
+
+<BODY >
+<table border="0" width="100%" id="table1" height="100%" cellspacing="0" cellpadding="0" class="td_LTRB">
+	<tr>
+		<td align="center">
+		 	<table border="0" width="400" id="table2" height="316" cellspacing="0" cellpadding="0"   >
+				<tr>
+					<td valign="top" background="../images/okbg.gif">
+					<table border="0" width="100%" id="table3" cellspacing="0" cellpadding="0">
+						<tr>
+							<td height="33" width="9%">　</td>
+							
+                  <td height="33" width="64%"> 增加新信息成功</td>
+							<td height="33" width="27%">　</td>
+						</tr>
+						<tr>
+							<td colspan="3">　</td>
+						</tr>
+						<tr>
+							<td colspan="3" height="237">
+							<table border="0" width="100%" id="table4" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="6%">　</td>
+									
+                        <td width="88%" class="txt_errorcontent" align="center">增加成功。</td>
+									<td width="6%">　</td>
+								</tr>
+							</table>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="3">
+							<p align="left">　　<img border="0" src="../images/backs.gif" width="21" height="17" align="middle">
+							<a href="javascript:history.go(-1);" ><font color="#0033CC">返回</font></a></td>
+							<!--onClick="alert(parent.leftframe.targeturl);location=parent.leftframe.targeturl"  target="_self"-->
+						</tr>												
+					</table>
+					</td>
+				</tr>
+			</table>
+	  </td>
+	</tr>
+</table>
+</body>
+</html>

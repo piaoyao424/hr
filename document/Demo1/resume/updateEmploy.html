@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="../js/style.css" type="text/css"></link>
+<script language="javascript" src="../js/oa_Popup.js"></script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="100%" height="318" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td height="30" colspan="2" class="td_LTBG_TOP">招聘管理 &gt;&gt; 录用管理&gt;&gt;修改面试成绩</td>
+    </tr>
+    <tr>
+      <td width="7%" height="44"  class="td_LTR">姓&nbsp;&nbsp;&nbsp;名：</td>
+      <td width="93%" height="30" class="td_LTE">
+      <input name="name" type="text" id="name" />      </td>
+    </tr>
+    <tr>
+      <td height="42"  class="td_LTR">应聘职位：</td>
+      <td height="30" class="td_LTE"><select name="position" id="position">
+        <option value="-----">请选择</option>
+        <option value="0">经理</option>
+        <option value="1">部门经理</option>
+        <option value="2">普通员工</option>
+        <option value="3">全部</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td height="46"  class="td_LTR">笔试成绩：</td>
+      <td height="30" class="td_LTE"><input name="name22" type="text" id="name22" /></td>
+    </tr>
+    <tr>
+      <td height="41"  class="td_LTR">面&nbsp;试&nbsp;官：</td>
+      <td height="30" class="td_LTE"><input name="name222" type="text" id="name222" /></td>
+    </tr>
+    <tr>
+      <td height="42"  class="td_LTR">面试官评价：      </td>
+      <td height="30" class="td_LTE">
+        <select name="select">
+          <option value="1">优异</option>
+          <option value="2">良好</option>
+          <option value="3">好</option>
+          <option value="4">差</option>
+        </select>      </td>
+    </tr>
+    <tr>
+      <td height="37" class="td_LTR">面试时间：</td>
+      <td height="30" class="td_LTE">
+        <input name="interviewDate" type="text" id="interviewDate" />    
+		 <img src="../image/datetime.gif" style="CURSOR: hand" onclick="fPopUpCalendarDlg(interviewDate);return false" alt="请选择日期" align="absmiddle"  width="16" height="15"/>
+      </td>
+    </tr>
+
+    <tr>
+      <td height="38" align="center" class="td_LTB"><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+      <td height="30" align="left" class="td_LTRB"><input name="Submit" type="submit" class="bt_four" value="提交" />&nbsp;&nbsp;&nbsp;&nbsp;
+      <input name="Submit2" type="reset" class="bt_four" value="重置" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

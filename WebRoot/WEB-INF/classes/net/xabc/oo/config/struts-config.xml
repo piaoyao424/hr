@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="userForm" type="net.xabc.oo.hr.web.form.UserForm" />
+		<form-bean name="dossierForm" type="net.xabc.oo.hr.web.form.DossierForm" />
+		<form-bean name="uploadForm" type="net.xabc.oo.hr.web.form.UploadForm" />
+		<form-bean name="positionChangeForm" type="net.xabc.oo.hr.web.form.PositionChangeForm"/>
+		<form-bean name="positionIssuanceForm" type="net.xabc.oo.hr.web.form.PositionIssuanceForm"/>
+		<form-bean name="branchForm" type="net.xabc.oo.hr.web.form.BranchForm"/>
+		<form-bean name="positionForm" type="net.xabc.oo.hr.web.form.PositionForm"/>
+		<form-bean name="sgrantForm" type="net.xabc.oo.hr.web.form.SalaryGrantDetailForm"/>
+		<form-bean name="examFistForm" type="net.xabc.oo.hr.web.form.ExamFistForm"/>
+        <form-bean name="examSecondLevelForm" type="net.xabc.oo.hr.web.form.ExamSecondLevelForm" />
+        <form-bean name="examForm" type="net.xabc.oo.hr.web.form.ExamForm"></form-bean>
+        <form-bean name="employForm" type="net.xabc.oo.hr.web.form.EmployForm"></form-bean>
+        <form-bean name="salaryStandardForm" type="net.xabc.oo.hr.web.form.SalaryStandardForm"/>
+        <form-bean name="salaryGrantForm" type="net.xabc.oo.hr.web.form.SalaryGrantForm"></form-bean>
+        <form-bean name="roleForm" type="net.xabc.oo.hr.web.form.RoleForm"/>
+	</form-beans>
+
+	<global-exceptions/>
+
+	<global-forwards>
+		<forward name="error" path="/common/error.jsp"></forward>
+		<forward name="auditing" path="/common/auditing.jsp"></forward>
+		<forward name="success" path="/common/success.jsp"></forward>
+		<forward name="loginFailed" path="/login.jsp"></forward>
+	</global-forwards>
+
+	<action-mappings>
+		<action 
+		       path="/positionAction" 
+		       name="positionForm"
+		       type="org.springframework.web.struts.DelegatingActionProxy"
+		       validate="false"
+		       parameter="method"
+		       scope="request">
+			   <forward name="addRole" path="/dictionary/addRole.jsp"></forward>
+			   <forward name="selectRole" path="/dictionary/selectRole.jsp"></forward>
+		</action>
+		<action 
+		       path="/examSecondLevelAction" 
+		       name="examSecondLevelForm"
+		       type="org.springframework.web.struts.DelegatingActionProxy"
+		       validate="false"
+		       parameter="method"
+		       scope="request">
+			   <forward name="addRole" path="/dictionary/addSecondType.jsp"></forward>
+			   <forward name="selectRole" path="/dictionary/selectRole.jsp"></forward>
+			   <forward name="selectexamSecond" path="/dictionary/selectSecond.jsp"></forward>
+		</action>
+		<action 
+		       path="/examLeoveAction" 
+		       name="examFistForm"
+		       type="org.springframework.web.struts.DelegatingActionProxy"
+		       validate="false"
+		       parameter="method"
+		       scope="request">
+			   <forward name="FistExam" path="/dictionary/scoreType.jsp"></forward>
+			  
+		</action>
+
+		<action
+		      path="/branch" 
+		      name="branchForm"
+			  type="org.springframework.web.struts.DelegatingActionProxy"
+			  validate="false" 
+			  parameter="method" 
+			  scope="request">
+			  <forward name="sectionType" path="/dictionary/sectionType.jsp"></forward>
+			  <forward name="selectRole" path="/dictionary/selectRole.jsp"></forward>
+		</action>
+		
+		<action 
+			    path="/user" 
+			    name="userForm"
+				type="org.springframework.web.struts.DelegatingActionProxy"
+				validate="false" 
+				parameter="method" 
+				scope="request">
+				<forward name="login" path="/login.jsp"></forward>
+				<forward name="index" path="/menue.do?method=initMenue"></forward>
+				<forward name="userInfo" path="/userRole/updateUser.jsp"></forward>
+				<forward name="userList" path="/userRole/userInfoList.jsp"></forward>
+				<forward name="updatePassword" path="/userRole/updatePassword.jsp"></forward>
+		</action>
+		
+		<action 
+		       path="/salaryStandAction" 
+		       name="salaryStandardForm"
+			   type="org.springframework.web.struts.DelegatingActionProxy"
+			   validate="false"
+			   parameter="method" 
+			   scope="request">
+			   <forward name="salaryStandardList" path="/salary/salaryStandardList.jsp"></forward>
+			   <forward name="updateSalaryStandard" path="/salary/updateSalaryStandard.jsp"></forward>
+			   <forward name="salaryAudtingList" path="/salary/salaryAudtingList.jsp"></forward>
+			   <forward name="standardAuditingDetail" path="/salary/standardAuditingDetail.jsp"></forward>
+			   <forward name="salaryGrantRegister" path="/salary/salaryGrantRegister.jsp"></forward>
+			   <forward name="employInfo" path="/dossier/updateDossier.jsp"></forward>
+			   <forward name="salarySelectAcdtingInfo" path="/salary/salarySelectAcdtingInfo.jsp"></forward>
+		</action>
+		
+		
+		<action 
+		       path="/salaryGrantAction" 
+		       name="salaryGrantForm"
+			   type="org.springframework.web.struts.DelegatingActionProxy"
+			   validate="false"
+			   parameter="method" 
+			   scope="request">
+			   <forward name="success" path="/common/success.jsp"></forward>
+		</action>
+		
+		<action 
+		        path="/Dossier" 
+		        name="dossierForm"
+			    type="org.springframework.web.struts.DelegatingActionProxy"
+			    validate="false" 
+			    parameter="method" 
+			    scope="request">
+				<forward name="login" path="/login.jsp"></forward>
+				<forward name="index" path="/index.jsp"></forward>
+				<forward name="dossierList" path="/dossier/dossierList.jsp"></forward>
+				<forward name="update" path="/dossier/updateDossier.jsp"></forward>
+				<forward name="auditingDossier" path="/dossier/auditingDossier.jsp"></forward>
+				<forward name="recycled" path="/dossier/dossierRecycled.jsp"></forward>
+	            <forward name="dossierDetail" path="/dossier/dossierDetail.jsp"></forward>     
+				<forward name="auditingDossier" path="/dossier/auditingDossier.jsp"></forward>
+				<forward name="auditingDetails" path="/dossier/auditingDossierDetails.jsp"></forward>
+				<forward name="recycled" path="/dossier/dossierRecycled.jsp"></forward>
+		</action>
+
+		<action 
+			    path="/option" 
+			    validate="false" 
+			    parameter="param"
+				scope="request"
+				type="org.springframework.web.struts.DelegatingActionProxy">
+				<forward name="addDossier" path="/dossier/addDossier.jsp"></forward>	
+				<forward name="rightsList" path="/userRole/addRole.jsp"></forward>	
+				<forward name="addRole" path="/userRole/addRole.jsp"></forward>
+				<forward name="addUser" path="/userRole/addUser.jsp"></forward>
+			    <forward name="salaryStandardRegister" path="/salary/salaryStandardRegister.jsp"></forward>
+			    <forward name="addSecond" path="/dictionary/addSecondType.jsp"></forward>
+		</action>
+		
+		<action path="/positionChange"
+		        validate="false"
+			    name="positionChangeForm"
+			    type="org.springframework.web.struts.DelegatingActionProxy"
+			    parameter="method" 
+			    scope="request">
+				<forward name="staffList" path="/changePosition/staffList.jsp"></forward>
+				<forward name="changeReport" path="/changePosition/changeReport.jsp"></forward>
+				<forward name="bookIn" path="/changePosition/bookIn.jsp"></forward>
+				<forward name="auditingDetail" path="/changePosition/auditingDetail.jsp"></forward>
+				<forward name="auditingList" path="/changePosition/auditingList.jsp"></forward>
+				
+		</action>
+		
+		<action 
+		        path="/uploadAction" 
+		        validate="false" 
+		        name="uploadForm"
+			    scope="request"
+			    type="org.springframework.web.struts.DelegatingActionProxy">
+			    <forward name="addDossier" path="/dossier/addDossier.jsp"></forward>
+		</action>
+		
+		<action 
+		        path="/position" 
+		        validate="false"
+			    name="positionIssuanceForm" 
+			    scope="request" 
+			    parameter="method"
+			    type="org.springframework.web.struts.DelegatingActionProxy">
+			    <forward name="position" path="/resume/positionManager.jsp"></forward>
+			    <forward name="addPosition" path="/resume/addPosition.jsp"></forward>
+			    <forward name="updatePosition" path="/resume/updatePosition.jsp"></forward>
+		</action>
+		
+		<action 
+		        path="/menue" 
+		        parameter="method"
+			    type="org.springframework.web.struts.DelegatingActionProxy">
+			    <forward name="initSuccess" path="/index.jsp"></forward>
+		</action>
+		<action path="/exam" 
+				name="examForm" 
+				validate="false"
+				parameter="method" 
+				scope="request"
+				type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="getList" path="/resume/examStore.jsp"></forward>
+			<forward name="upDate" path="/resume/upateStore.jsp"></forward>
+			<forward name="addStore" path="/resume/addStore.jsp"></forward>
+			<forward name="storeRecycled" path="/resume/storeRecycled.jsp"></forward>
+		</action>
+		<action path="/employ" 
+				name="employForm" 
+				validate="false"
+				parameter="method" 
+				scope="request"
+				type="org.springframework.web.struts.DelegatingActionProxy">
+			<forward name="employ" path="/resume/employManager.jsp"></forward>
+			<forward name="addInterview" path="/resume/addInterviewScore.jsp"></forward>
+			<forward name="resume" path="/resume/resumeList.jsp"></forward>
+			<forward name="resumeDetails" path="/resume/resumeDetails.jsp"></forward>
+			<forward name="addScoreResult" path="/resume/addScoreResult.jsp"></forward>
+			<forward name="employInfo" path="/resume/showScoreResult.jsp"></forward>
+		</action>
+		<action path="/role"
+			validate="false"
+			name="roleForm"
+			type="org.springframework.web.struts.DelegatingActionProxy"
+			parameter="method">
+			<forward name="update" path="/userRole/modifyRole.jsp"></forward>
+			<forward name="roleLists" path="/userRole/roleList.jsp"></forward>
+		</action>
+    <action path="net.xabc.oo.he.web.action" type="SalaryGrantDetailAction" />
+		
+	</action-mappings>
+	<message-resources parameter="net.xabc.oo.hr.ApplicationResources" />
+</struts-config>

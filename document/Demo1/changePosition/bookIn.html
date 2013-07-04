@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link rel="stylesheet" href="../js/style.css" type="text/css"></link>
+</head>
+
+<body>
+<form id="bookInForm" name="bookInForm" method="post" action="../common/auditing.html">
+  <table border="0" cellpadding="0" cellspacing="0"  width="100%">
+    <tr>
+      <td colspan="2" class="td_LTBG_TOP" height="30"><img src="../image/list_icon.gif" width="13" height="13" />调动管理&gt;&gt;登记</td>
+    </tr>
+    <tr>
+      <td width="149" height="30" align="left" class="td_LTR">员工编号</td>
+      <td width="1038" class="td_LTE"><label>115</label></td>
+    </tr>
+    <tr>
+      <td height="15" align="left" class="td_LTR">员工姓名</td>
+      <td width="1038" height="30" class="td_LTE"><input name="name" type="text" id="name" /></td>
+    </tr>
+    <tr>
+      <td height="30" align="left" class="td_LTR">原职位及部门</td>
+      <td  class="td_LTE"><label>销售部 业务员</label></td>
+    </tr>
+   
+    <tr>
+      <td height="30" align="left" class="td_LTR">调动职位及部门</td>
+      <td  class="td_LTE"><select name="select3">
+        <option value="研发部">研发部</option>
+        <option value="销售部">销售部</option>
+        <option value="市场部">市场部</option>
+        <option value="财务部">财务部</option>
+      </select>
+        <select name="select3">
+          <option value="普通员工">普通员工</option>
+          <option value="部门经理">部门经理</option>
+        </select></td>
+    </tr>
+	 <tr>
+      <td height="30" align="left" class="td_LTR">原&nbsp;&nbsp;&nbsp;&nbsp;因</td>
+      <td  class="td_LTE"><label>
+        <textarea name="reason" cols="45" rows="6" id="reason"></textarea>
+      </label></td>
+    </tr>
+	 <tr>
+      <td height="30" align="left" class="td_LTR">备&nbsp;&nbsp;&nbsp;&nbsp;注</td>
+      <td  class="td_LTE"><label></label>
+       <textarea name="remark" cols="45" rows="6" id="remark"></textarea></td>
+    </tr>
+    <tr>
+      <td  height="30" class="td_LTB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　　　　　　　        </td>
+      <td  height="30" class="td_LTRB"><input type="submit" name="Submit" value="登记" class="bt_four" />&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>
+        <input type="button" name="Submit2" value="返回"  class="bt_four"  onclick="javascript:history.go(-1)"/>
+      </label></td>
+    </tr>
+  </table>
+
+</form>
+</body>
+</html>
